@@ -1,0 +1,33 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.swiper-wrapper {
+  min-height: 100vh;
+}
+.swiper-pagination-bullet {
+  background-color: #fff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 20;
+}
+.shadow {
+  box-shadow: 2px 2px 2px 1px rgb(0, 0, 0);
+}
