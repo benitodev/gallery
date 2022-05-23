@@ -16,16 +16,16 @@ function App() {
   return (
     <div className="min-h-screen">
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="gallery/" element={<Home />}></Route>
         {/* <Route path="user/:user" element={<UserProfile />}></Route> */}
 
-        <Route path="profile" element={<AuthProfile />} />
-        <Route path="profile/:id" element={<AuthProfile />} />
+        <Route path="gallery/profile" element={<AuthProfile />} />
+        <Route path="gallery/profile/:id" element={<AuthProfile />} />
         {!user && (
           <>
-            <Route path="/create" element={<Create />}></Route>
+            <Route path="gallery//create" element={<Create />}></Route>
             <Route
-              path="/login"
+              path="gallery//login"
               element={!user ? <Login /> : <Navigate to="/" />}
             />
           </>
@@ -33,10 +33,13 @@ function App() {
 
         {user && (
           <>
-            <Route path="settings" element={<Settings />} />
-            <Route path="image" element={<ImageCreate />} />
-            <Route path="image/:id" element={<Image />}></Route>
-            <Route path="image/update/:id" element={<ImageUpdate />}></Route>
+            <Route path="gallery/settings" element={<Settings />} />
+            <Route path="gallery/image" element={<ImageCreate />} />
+            <Route path="gallery/image/:id" element={<Image />}></Route>
+            <Route
+              path="gallery/image/update/:id"
+              element={<ImageUpdate />}
+            ></Route>
           </>
         )}
         <Route path="*" element={<NotFound />}></Route>
