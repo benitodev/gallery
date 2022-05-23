@@ -23,9 +23,9 @@ function App() {
         <Route path="gallery/profile/:id" element={<AuthProfile />} />
         {!user && (
           <>
-            <Route path="gallery//create" element={<Create />}></Route>
+            <Route path="gallery/create" element={<Create />}></Route>
             <Route
-              path="gallery//login"
+              path="gallery/login"
               element={!user ? <Login /> : <Navigate to="/" />}
             />
           </>
