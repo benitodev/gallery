@@ -19,7 +19,7 @@ const MenuHamburguer = () => {
           sx={{ color: "white" }}
         />
       ) : (
-        <Link to="/login">
+        <Link to="/gallery/login">
           <LoginIcon sx={{ color: "white" }} />
         </Link>
       )}

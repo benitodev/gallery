@@ -7,7 +7,7 @@ const Menu = ({ windowScrollActive = false }) => {
   // eslint-disable-next-line no-unused-vars
   const [windowActivate, setWindowActive] = useState(windowScrollActive);
   const [isScroll, setIsScroll] = useState(false);
- 
+
   useEffect(() => {
     if (!windowActivate) {
       setIsScroll(true);
@@ -27,7 +27,7 @@ const Menu = ({ windowScrollActive = false }) => {
         isScroll ? "flex" : "hidden"
       } z-40 justify-around items-center w-full h-[3.5rem] fixed top-0  bg-mainColor`}
     >
-      <Link to="/">
+      <Link to="/gallery/">
         <CottageIcon id="home-icon" sx={{ color: "white" }} />
       </Link>
       <Search />

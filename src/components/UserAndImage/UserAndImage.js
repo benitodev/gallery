@@ -23,7 +23,7 @@ const UserAndImage = ({
             <h1 className="text-white">NK</h1>
           </div>
         )}
-        <Link to={`/profile/${user.id}`}>
+        <Link to={`/gallery/profile/${user.id}`}>
           <h1 className="font-medium">{user.username && user.username}</h1>
         </Link>
       </article>

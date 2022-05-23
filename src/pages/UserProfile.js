@@ -80,7 +80,7 @@ const UserProfile = () => {
               </button>
 
               <Link
-                to="/forgot"
+                to="/gallery/forgot"
                 className="inline-block text-[#4c4a49] align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
               >
                 Forgot password?

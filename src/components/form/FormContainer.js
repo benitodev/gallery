@@ -11,11 +11,11 @@ const FormContainer = ({ handleSubmit, custom, typeOfForm }) => {
         <h4 className="text-[#6d6c6c]">
           {secondTitle}
           {typeOfForm === "login" ? (
-            <Link to="/create">
+            <Link to="/gallery/create">
               <span> create</span>
             </Link>
           ) : (
-            <Link to="/login">
+            <Link to="/gallery/login">
               <span> login</span>
             </Link>
           )}

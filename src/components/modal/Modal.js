@@ -63,7 +63,7 @@ const Modal = ({ title, setModal, isModal, imageId }) => {
               >
                 Delete
               </button>
-              <Link to={`/image/update/${imageId}`}>
+              <Link to={`/gallery/image/update/${imageId}`}>
                 <button
                   data-modal-toggle="defaultModal"
                   type="button"
