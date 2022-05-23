@@ -11,7 +11,7 @@ const Photo = ({ name, url, owner, id, wideClass, tallClass }) => {
         tallClass ? tallClass : ""
       }`}
     >
-      <Link to={"/galleryimage/" + id}>
+      <Link to={"/gallery/image/" + id}>
         <img
           onClick={handleClick}
           className="w-full max-w-full h-auto object-cover"

@@ -18,7 +18,7 @@ const Login = () => {
       await loginService.login({ username, password }, dispatch);
       setUsername("");
       setPassword("");
-      navigate("/");
+      navigate("/gallery/");
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +37,7 @@ const Login = () => {
           title: "Login your account",
           secondTitle: "you don't have account?",
           submitButton: "Sign in",
-          buttonLink:"create"
+          buttonLink: "create",
         }}
         typeOfForm="login"
       />
