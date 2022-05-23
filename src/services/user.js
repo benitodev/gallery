@@ -1,9 +1,11 @@
 import axios from "axios";
 
 const baseUrl = "https://benitodev-gallery-api.herokuapp.com/user";
+//const baseUrlLocalhost = "http://localhost:5000/user";
 const getUser = async (ID) => {
   try {
     const request = await axios(baseUrl + "/" + ID);
+    console.log(request.data);
     return request.data.content;
   } catch (err) {}
 };

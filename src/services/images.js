@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseUrl = "https://benitodev-gallery-api.herokuapp.com/image";
-// const baseUrlLocalhost = "http://localhost:5000/image";
+const baseUrlLocalhost = "http://localhost:5000/image";
 const getAll = async () => {
   const request = await axios.get(baseUrl);
   return request.data.content;
@@ -19,18 +19,24 @@ const getRandom = async () => {
   return request.data.content;
 };
 const create = async (newImage, { token }) => {
-  const form = new FormData();
-  for (let key in newImage) {
-    form.append(key, newImage[key]);
+  try {
+    const form = new FormData();
+    for (let key in newImage) {
+      form.append(key, newImage[key]);
+    }
+    const config = {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const request = await axios.post(baseUrl, form, config);
+    return request.data;
+  } catch (err) {
+    // return err.response.data;
+    return [];
   }
-  const config = {
-    headers: {
-      "Content-Type": "multipart/form-data",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  const request = await axios.post(baseUrl, form, config);
-  return request.data;
 };
 const update = async (ID, body, { token }) => {
   const form = new FormData();
@@ -63,4 +69,12 @@ const eliminate = async (ID, { token }) => {
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, getOne, getRandom, create, eliminate, update };
+export default {
+  getAll,
+  getOne,
+  getRandom,
+  create,
+  eliminate,
+  update,
+  baseUrl,
+};

@@ -7,11 +7,11 @@ const ImageLogic = () => {
   const [username, setUsername] = useState("");
   useEffect(() => {
     if (!dataImage.length > 0) return;
-
-    const { id } = dataImage[0];
+    console.log(dataImage[0].user);
+    const { user } = dataImage[0];
     const getImages = async () => {
-      const user = await userService.getUser(id);
-      setUsername(user);
+      const userToSearch = await userService.getUser(user[0]);
+      setUsername(userToSearch);
     };
     getImages();
   }, [dataImage]);

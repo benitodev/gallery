@@ -6,9 +6,13 @@ export const useUser = ({ get = "one" }) => {
   const [isImage, setIsImage] = useState(null);
   const [dataImage, setDataimage] = useState([]);
   const params = useParams();
-  const user = JSON.parse(localStorage.getItem("authGalleryApp")) || params;
+  const isParams = Object.keys(params).length > 0;
+  const user = isParams
+    ? params
+    : JSON.parse(localStorage.getItem("authGalleryApp"));
+
   const userId = user.id || null;
-  console.log(user);
+
   let serviceMethod = null;
   if (get === "one") {
     serviceMethod = userService.getUser;
@@ -18,7 +22,6 @@ export const useUser = ({ get = "one" }) => {
 
   useEffect(() => {
     if (!serviceMethod) return;
-    console.log(userId);
     serviceMethod(userId).then((res) => {
       setDataimage([res]);
     });

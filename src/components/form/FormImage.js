@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const FormImage = ({ onFileUpload, formType }) => {
+const FormImage = ({ onFileUpload, formType, setMessage, message = "" }) => {
   const [name, setName] = useState("");
   const [selectedFile, setSelectedFile] = useState();
   const { type, image = {} } = formType;
-  console.log(formType);
   const onFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
@@ -15,14 +14,21 @@ const FormImage = ({ onFileUpload, formType }) => {
   };
 
   useEffect(() => {
+    if (!message) return;
+    setTimeout(() => {
+      setMessage("");
+    }, 5000);
+  }, [message]);
+
+  useEffect(() => {
     if (!image.name) return;
     setName(image.name);
-    console.log(image);
   }, [image]);
   return (
     <div className="min-h-screen flex flex-col  justify-center items-center">
       {" "}
       <h1 className="mb-2 text-3xl font-semibold text-center">{type} Image</h1>
+      {message && <p>{message}</p>}
       <div id="settingsForm">
         <div className="block p-6 bg-white max-w-md">
           <article className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -39,6 +45,8 @@ const FormImage = ({ onFileUpload, formType }) => {
                   className="form-control
           border border-[#c2baba] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   onChange={(event) => onInputChange(event)}
+                  id={!image.name ? "Name" : image.name}
+                  name={!image.name ? "Name" : image.name}
                   placeholder={!image.name ? "Name" : image.name}
                 />
               </div>
