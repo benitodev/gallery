@@ -7,9 +7,9 @@ const PhotosList = () => {
   useEffect(() => {
     imageService.getAll().then((res) => {
       setPhotosList(res);
-      console.log(res);
     });
   }, []);
+  console.log("hi");
   return (
     <div className="grid grid-cols-photos auto-rows-photos grid-flow-row-dense gap-3 ">
       {photosList &&

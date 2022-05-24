@@ -8,24 +8,22 @@ const Menu = ({ windowScrollActive = false }) => {
   const [windowActivate, setWindowActive] = useState(windowScrollActive);
   const [isScroll, setIsScroll] = useState(false);
 
-  useEffect(() => {
-    if (!windowActivate) {
-      setIsScroll(true);
-      return undefined;
-    }
-    window.onscroll = () => {
-      const scroll = window.scrollY;
+  // useEffect(() => {
+  //   if (!windowActivate) {
+  //     setIsScroll(true);
+  //     return undefined;
+  //   }
+  //   window.onscroll = () => {
+  //     const scroll = window.scrollY;
 
-      setIsScroll(scroll !== 0 ? true : false);
+  //     setIsScroll(scroll !== 0 ? true : false);
 
-      return () => (window.onscroll = null);
-    };
-  }, [windowActivate]);
+  //     return () => (window.onscroll = null);
+  //   };
+  // }, [windowActivate]);
   return (
     <article
-      className={`${
-        isScroll ? "flex" : "hidden"
-      } z-40 justify-around items-center w-full h-[3.5rem] fixed top-0  bg-mainColor`}
+      className={`flex z-40 justify-around items-center w-full h-[3.5rem] fixed top-0  bg-mainColor`}
     >
       <Link to="/gallery/">
         <CottageIcon id="home-icon" sx={{ color: "white" }} />
