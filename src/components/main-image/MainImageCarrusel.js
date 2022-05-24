@@ -7,13 +7,11 @@ import { Pagination } from "swiper";
 import { useEffect } from "react";
 import imageService from "../../services/images";
 
-const MainImageCarrusel = ({ loader, setLoader }) => {
+const MainImageCarrusel = () => {
   const [imageData, setImageData] = useState([]);
   useEffect(() => {
-    setLoader(true);
     const getRandomImages = async () => {
       const randomImages = await imageService.getRandom();
-      setLoader(false);
       setImageData(randomImages);
     };
     getRandomImages();

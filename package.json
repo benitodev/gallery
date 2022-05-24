@@ -1,7 +1,7 @@
 {
   "name": "gallery",
   "version": "0.1.0",
-  "homepage": "https://benitodev.github.io/gallery",
+  "homepage": "https://benitodev.github.io/gallery/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
