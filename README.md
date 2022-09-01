@@ -10,9 +10,9 @@ i work to create a complete environment app, here you can see the Frontend.
 ### API
 
 #### Fast usage
-- Users: https://github.com/benitodev/gallery-api/user
-- Images: https://github.com/benitodev/gallery-api/image
-- login: https://github.com/benitodev/gallery-api/login
+- Users: https://web-production-f757.up.railway.app/user
+- Images: https://web-production-f757.up.railway.app/image
+- login: https://web-production-f757.up.railway.app/login
 if you want to know how use it check out this [repository](https://github.com/benitodev/gallery-api).
 
 ## Screenshots
