@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://benitodev-gallery-api.herokuapp.com/user";
+const baseUrl = "https://web-production-f757.up.railway.app/user";
 //const baseUrlLocalhost = "http://localhost:5000/user";
 const getUser = async (ID) => {
   try {
