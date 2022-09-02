@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://benitodev-gallery-api.herokuapp.com/image";
+const baseUrl = "https://web-production-f757.up.railway.app/image";
 const baseUrlLocalhost = "http://localhost:5000/image";
 const getAll = async () => {
   const request = await axios.get(baseUrl);
