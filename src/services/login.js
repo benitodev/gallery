@@ -2,7 +2,7 @@ import axios from "axios";
 import { loginSuccess, loginStart, loginFailure } from "../context/AuthActions";
 
 const login = async (credentials, dispatch) => {
-  const baseUrl = "https://benitodev-gallery-api.herokuapp.com/login";
+  const baseUrl = "https://web-production-f757.up.railway.app/login";
 
   dispatch(loginStart());
   try {
